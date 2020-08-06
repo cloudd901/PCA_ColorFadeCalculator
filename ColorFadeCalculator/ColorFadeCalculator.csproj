@@ -7,7 +7,7 @@
     <ProjectGuid>{9E818970-A608-49DE-9319-D3542B6EB175}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ColorFadeCalculator</RootNamespace>
+    <RootNamespace>PCAFFINITY</RootNamespace>
     <AssemblyName>PCA_ColorFadeCalculator</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
