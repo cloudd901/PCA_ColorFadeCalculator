@@ -1,16 +1,15 @@
-﻿using System.Resources;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ColorFadeCalculator")]
-[assembly: AssemblyDescription("Easily calculate color fading between two colors.")]
+[assembly: AssemblyTitle("ColorFadeCalculator (Example)")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("PC Affinity")]
-[assembly: AssemblyProduct("ColorFadeCalculator")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ColorFadeCalculator (Example)")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -21,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("9e818970-a608-49de-9319-d3542b6eb175")]
+[assembly: Guid("4450b387-fbc4-475c-b8a7-0b62acfefa17")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -33,6 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.1.0")]
-[assembly: AssemblyFileVersion("1.0.1.0")]
-[assembly: NeutralResourcesLanguage("en")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]

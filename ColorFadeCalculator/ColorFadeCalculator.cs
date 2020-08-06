@@ -135,7 +135,7 @@ namespace PCAFFINITY
             while (Steps.Count < targetSteps)
             {
                 Random r = new Random();
-                int i = r.Next(0, Steps.Count);
+                int i = r.Next(1, Steps.Count-1);
                 if (i == temp || i - 1 == temp)
                 {
                     continue;
@@ -143,6 +143,18 @@ namespace PCAFFINITY
 
                 temp = i;
                 Steps.Insert(i, Steps[i]);
+            }
+            while (Steps.Count > targetSteps)
+            {
+                Random r = new Random();
+                int i = r.Next(1, Steps.Count-1);
+                if (i == temp || i - 1 == temp)
+                {
+                    continue;
+                }
+
+                temp = i;
+                Steps.RemoveAt(i);
             }
         }
 
