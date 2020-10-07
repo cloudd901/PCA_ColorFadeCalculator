@@ -12,6 +12,10 @@ namespace PCAFFINITY
     {
         // accuracy 1-255 (how many steps from one color to the next)
 
+        public ColorFadeCalculator()
+        {
+        }
+
         public ColorFadeCalculator(Color fromColor, Color toColor)
             : this(fromColor, toColor, 60, 1, false)
         {
@@ -34,10 +38,20 @@ namespace PCAFFINITY
 
         private ColorFadeCalculator(Color fromColor, Color toColor, int targetSteps = 60, int accuracy = 1, bool transparentFading = false)
         {
+            Steps = new List<Color>();
             DoWork(fromColor, toColor, targetSteps, accuracy, transparentFading);
         }
 
-        public List<Color> Steps { get; private set; } = new List<Color>();
+        public List<Color> Steps { get; private set; }
+
+        public static Color GetMidColor(Color color1, Color color2)
+        {
+            int r = (color1.R + color2.R) / 2;
+            int g = (color1.G + color2.G) / 2;
+            int b = (color1.B + color2.B) / 2;
+
+            return Color.FromArgb(r, g, b);
+        }
 
         public void DoWork(Color fromColor, Color toColor, int targetSteps, int accuracy, bool transparentFading)
         {
@@ -54,7 +68,7 @@ namespace PCAFFINITY
 
             if (accuracy > 255 || accuracy < 1)
             {
-                throw new ArgumentOutOfRangeException("Accuracy must be betwee 1 and 255.");
+                throw new ArgumentOutOfRangeException("Accuracy must be between 1 and 255.");
             }
 
             Color labelStepColor = fromColor;
@@ -65,7 +79,6 @@ namespace PCAFFINITY
                 {
                     labelStepColor = FadeColor(labelStepColor, toColor, 1, true);
                     Steps.Add(labelStepColor);
-
                 } while (labelStepColor.A != toColor.A);
             }
             else
@@ -74,8 +87,7 @@ namespace PCAFFINITY
                 {
                     labelStepColor = FadeColor(labelStepColor, toColor, accuracy, false);
                     Steps.Add(labelStepColor);
-
-                } while (labelStepColor.ToArgb() != toColor.ToArgb());
+                } while (labelStepColor.R != toColor.R || labelStepColor.G != toColor.G || labelStepColor.B != toColor.B);
             }
 
             if (targetSteps > 1)
@@ -135,7 +147,7 @@ namespace PCAFFINITY
             while (Steps.Count < targetSteps)
             {
                 Random r = new Random();
-                int i = r.Next(1, Steps.Count-1);
+                int i = r.Next(1, Steps.Count - 1);
                 if (i == temp || i - 1 == temp)
                 {
                     continue;
@@ -147,7 +159,7 @@ namespace PCAFFINITY
             while (Steps.Count > targetSteps)
             {
                 Random r = new Random();
-                int i = r.Next(1, Steps.Count-1);
+                int i = r.Next(1, Steps.Count - 1);
                 if (i == temp || i - 1 == temp)
                 {
                     continue;
@@ -158,7 +170,7 @@ namespace PCAFFINITY
             }
         }
 
-        private Color FadeColor(Color startColor, Color targetColor, int steps, bool fadeAlpha)
+        private static Color FadeColor(Color startColor, Color targetColor, int steps, bool fadeAlpha)
         {
             int A = startColor.A;
             int R = startColor.R;
