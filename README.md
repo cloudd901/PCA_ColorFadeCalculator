@@ -2,12 +2,12 @@
 
 Custom fading generator.
 
-Settings
+<b>Settings</b>
 
 - Variables
   - Steps = Contains all colors between two colors. (read – List<Color>)
 <br>
-Functions
+  <b>Functions</b>
   
     -ColorFadeCalculator()
     -ColorFadeCalculator(Color fromColor, Color toColor)
