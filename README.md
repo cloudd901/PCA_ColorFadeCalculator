@@ -9,12 +9,12 @@ Custom fading generator.
 <br>
   <b>Functions</b>
   
-    -ColorFadeCalculator()
-    -ColorFadeCalculator(Color fromColor, Color toColor)
-    -ColorFadeCalculator(Color fromColor, Color toColor, int targetSteps = 60)
-    -ColorFadeCalculator(Color fromColor, Color toColor, int targetSteps = 60, bool transparentFading = false)
-    -ColorFadeCalculator(Color fromColor, Color toColor, int targetSteps = 60, int accuracy = 1)
-    -GetMidColor(Color color1, Color color2)
+    ColorFadeCalculator()
+    ColorFadeCalculator(Color fromColor, Color toColor)
+    ColorFadeCalculator(Color fromColor, Color toColor, int targetSteps = 60)
+    ColorFadeCalculator(Color fromColor, Color toColor, int targetSteps = 60, bool transparentFading = false)
+    ColorFadeCalculator(Color fromColor, Color toColor, int targetSteps = 60, int accuracy = 1)
+    GetMidColor(Color color1, Color color2)
   
 - ColorFadeCalculator
   - fromColor = First Color. (Color)
@@ -33,9 +33,9 @@ Custom fading generator.
 <br>
 Simple Example:
   
-    -label.Backcolor = Color.Red;
-    -ColorFadeCalculator cfc = ColorFadeCalculator(Color.Red, Color.Blue);
-    -for (int i = 0; i < cfc.Steps.Count; i++)
-    -{
-    -    label.Backcolor = cfc.Steps[i];
-    -}
+    label.Backcolor = Color.Red;
+    ColorFadeCalculator cfc = ColorFadeCalculator(Color.Red, Color.Blue);
+    for (int i = 0; i < cfc.Steps.Count; i++)
+    {
+        label.Backcolor = cfc.Steps[i];
+    }
