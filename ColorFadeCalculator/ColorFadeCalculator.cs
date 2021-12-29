@@ -156,6 +156,7 @@ namespace PCAFFINITY
                 temp = i;
                 Steps.Insert(i, Steps[i]);
             }
+
             while (Steps.Count > targetSteps)
             {
                 Random r = new Random();
@@ -168,6 +169,10 @@ namespace PCAFFINITY
                 temp = i;
                 Steps.RemoveAt(i);
             }
+
+            //Ensure start and end colors are correct
+            Steps[0] = fromColor;
+            Steps[Steps.Count - 1] = toColor;
         }
 
         private static Color FadeColor(Color startColor, Color targetColor, int steps, bool fadeAlpha)
